@@ -1,8 +1,10 @@
-# suggestions.py - Generate AI-based recommendations
 def generate_suggestions(text):
     suggestions = []
-    if "teamwork" not in text.lower():
-        suggestions.append("Consider adding 'teamwork' as a soft skill.")
-    if "problem-solving" not in text.lower():
-        suggestions.append("Mention 'problem-solving' experience in your resume.")
-    return suggestions
+    if len(text) < 500:
+        suggestions.append("Your resume is too short. Try adding more details.")
+    if "Python" not in text:
+        suggestions.append("Consider adding Python to your resume if applicable.")
+    if "Experience" not in text:
+        suggestions.append("Add a section for Experience to improve structure.")
+    
+    return suggestions if suggestions else ["Your resume looks well-structured!"]
